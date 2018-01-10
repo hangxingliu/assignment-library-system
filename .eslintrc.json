@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jquery": true
+    },
+    "globals": {
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "rules": {
+        "no-unused-vars": "warn",
+        "no-console": "off",
+        "react/prop-types": "off",
+        "react/jsx-no-target-blank": "off"
+    },
+    "plugins": [
+        "react"
+    ]
+}
