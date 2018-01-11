@@ -1,4 +1,4 @@
-name: Library System
+name: Library System (Development Version)
 src: 
     base: src
     assets: 
@@ -28,7 +28,7 @@ hook:
 processor:
     source_map: 
         enable: false
-        js: true
+        js: false
         css: false
     watchify:
         delay: 100
@@ -37,19 +37,22 @@ processor:
         poll: true
     sass: true
     babel: 
-        enable: true
+        enable: false
         babelrc: .babelrc
     browser_sync:
         enable: true
         server: dist
         open: false
+        notify: false
     browserify:
         transform:
+            - name: "envify"
+              options:
+                NODE_ENV: development
             - name: "babelify"
               options:
                 presets: 
-                    - "react" 
-                    - "es2015"
+                    - "react"
                 plugins:
                     - "transform-es2015-modules-commonjs"
                     - "transform-object-rest-spread"

@@ -1,0 +1,51 @@
+name: Library System (Production Version)
+src: 
+    base: src
+    assets: 
+    pages: 
+        - "index.html"
+    scripts:
+        - "scripts/index.js"
+    concat:
+    styles:
+        - "styles/index.scss"
+dist: 
+    base: dist
+    clean: false
+
+watch:
+    - "src"
+
+hook:
+
+processor:
+    source_map: 
+        enable: false
+    watchify:
+        delay: 100
+        ignoreWatch:
+            - "**/node_modules/**"
+        poll: true
+    sass: true
+    babel: 
+        enable: true
+        babelrc: .babelrc
+    browser_sync:
+        enable: true
+        server: dist
+        open: false
+        notify: false
+    browserify:
+        transform:
+            - name: "envify"
+              options:
+                NODE_ENV: production
+            - name: "babelify"
+              options:
+                presets: 
+                    - "react" 
+                    - "es2015"
+                plugins:
+                    - "transform-es2015-modules-commonjs"
+                    - "transform-object-rest-spread"
+                    - "minify-dead-code-elimination"

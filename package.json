@@ -4,17 +4,23 @@
   "description": "An library system for assignment",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/build.js",
-    "build": "node ./build/build.js",
-    "watch": "node ./build/build.js -w"
+    "start": "node ./build/build.js dev -w",
+    "build-dev": "node ./build/build.js dev",
+    "build-dev-live": "node ./build/build.js dev -w",
+    "build-prod": "node ./build/build.js prod",
+    "build-prod-live": "node ./build/build.js prod -w"
   },
   "author": "LiuYue",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@types/node": "^8.0.20",
+    "@types/jquery": "^3.2.17",
+    "@types/node": "^8.5.8",
     "async": "^2.5.0",
     "babel-core": "^6.25.0",
+    "babel-plugin-minify-dead-code-elimination": "^0.2.0",
+    "babel-plugin-minify-mangle-names": "^0.2.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-merge-sibling-variables": "^6.8.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -23,6 +29,7 @@
     "colors": "^1.1.2",
     "commander": "^2.11.0",
     "convert-source-map": "^1.5.0",
+    "envify": "^4.1.0",
     "eslint": "^4.4.1",
     "eslint-plugin-react": "^7.2.0",
     "fs-extra": "^4.0.1",
@@ -34,6 +41,12 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.3",
+    "core-js": "^2.5.3",
+    "hover.css": "^2.2.1",
+    "jquery": "^3.2.1",
+    "loaders.css": "^0.1.2",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },

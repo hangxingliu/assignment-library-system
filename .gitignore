@@ -1,3 +1,6 @@
+# ignore target archive zip file
+/*.zip
+
 # ignore ssh-mount
 ssh-mount
 ssh-mount.sh

@@ -3,12 +3,15 @@
  * @license Apache-2.0
  * 
  * frontend build scripts
- * version: 1.0.4-alpha
- * date: 2017-12-29 07:00
+ * version: 1.0.5-alpha
+ * date: 2018-01-11 00:23
  */
-const a = '1.0.4-alpha',
+const a = '1.0.5-alpha',
 b = `${__dirname}/build.config.yaml`;
-let c = (a) => `build.${a}.config.yaml`;
+let c = (a) => [
+`${a}.build.config.yaml`,
+`build.config.${a}.yaml`,
+`build.${a}.config.yaml`];
 require('colors');
 let d = require('fs-extra'),
 e = require('js-yaml'),
@@ -303,10 +306,13 @@ function ka() {
 	}let c = process.argv.slice(2),d = !1,e = '';b('-h', '--help') && s(0, t()), b('-V', '--version') && s(0, a), b('-w', '--watch') && (d = !0);for (let a of c) if (!a.match(/^\-{1,}/)) {e = a;break;}return { watch: d, mode: e };
 }
 function la(a = '') {
-	let e = '';return a ?
-	d.existsSync(e = h(__dirname, a)) ? e :
-	d.existsSync(e = h(__dirname, c(a))) ? e :
-	'' : b;
+	let e = '';
+	if (!a) return b;
+	let f = [a].concat(c(a));
+	for (let b of f)
+	if (d.existsSync(e = h(__dirname, b)))
+	return e;
+	return '';
 }
 function ma(a, b = x) {
 	let c = M.hook[a];

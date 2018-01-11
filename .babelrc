@@ -1,4 +1,8 @@
 {
 	"compact": "true",
-	"comments": false
+	"comments": false,
+	"plugins": [
+		"minify-mangle-names",
+		"transform-merge-sibling-variables"
+	]
 }

@@ -3,10 +3,10 @@
  * @license Apache-2.0
  * 
  * frontend build scripts
- * version: 1.0.4-alpha
- * date: 2017-12-29 07:00
+ * version: 1.0.5-alpha
+ * date: 2018-01-11 00:23
  */
-const a = '1.0.4-alpha';
+const a = '1.0.5-alpha';
 require('colors');
 let b = require('glob'),
 c = require('fs-extra'),
