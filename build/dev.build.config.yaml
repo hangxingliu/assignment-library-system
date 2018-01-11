@@ -6,6 +6,7 @@ src:
         - "index.html"
     scripts:
         - "scripts/index.js"
+        - "scripts/polyfill.js"
     concat:
     styles:
         - "styles/index.scss"

@@ -14,11 +14,25 @@ export function ajax(method, url, data = null,
 	sendDataType = '', allowedStatusCode = [200] ) { 
 	
 	return new Promise((resolve, reject) => {
+		let isXDomainRequest = false;
 		let xhr = new XMLHttpRequest();
+
+		//For IE8/IE9 Cross domain request:
+		//@ts-ignore
+		if (typeof XDomainRequest != 'undefined') { 
+			//@ts-ignore			
+			xhr = new XDomainRequest();
+			isXDomainRequest = true;
+		}
+		
 		xhr.open(method, url);
 		if (sendDataType)
 			xhr.setRequestHeader("Content-type", sendDataType);
 		xhr.onload = () => {
+			// fake status 200 for XDomainRequest(without status field)
+			if (isXDomainRequest)
+				return resolve({ status: 200, result: xhr.responseText });
+			
 			if (xhr.readyState != 4 || allowedStatusCode.indexOf(xhr.status) < 0 )
 				return onError();
 			resolve({ status: xhr.status, result: xhr.responseText });
