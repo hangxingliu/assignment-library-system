@@ -5,7 +5,7 @@ import React from 'react';
 import { getString } from '../i18n/index';
 
 export function PageFooter(props) {
-	return <div id="footer" className="container mt-5">
+	return <div id="footer" className="container my-5">
 		<div className="row">
 			<div className="col-12 text-center text-muted">
 				<div> {getString('iconFrom')} <Link link="http://www.iconfont.cn/">Iconfont</Link>. </div>

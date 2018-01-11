@@ -4,7 +4,7 @@
 import { STRINGS_EN_ZH_MAP } from "./strings";
 import { updateUI } from "../components/components";
 
-let currentLanguage = 0;
+let currentLanguage = 1; // 默认简体中文
 
 /** @returns {string} */
 export function getI18N() { 
