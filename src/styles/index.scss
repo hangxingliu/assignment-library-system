@@ -1,3 +1,37 @@
-.hello-world {
-	display: block;
+// setup bootswatch and bootstrap 
+@import "./theme_minty/_variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./theme_minty/_bootswatch.scss";
+
+// setup hover.css
+@import "../../node_modules/hover.css/scss/hover.scss";
+
+// setup loader.css
+@import "./loader.css/_variables.scss";
+@import "./loader.css/_mixins.scss";
+@import "./loader.css/animations/pacman.scss"; // only pick up pac-man loader
+
+@import "./_home_search_container.scss";
+@import "./_search_results_container.scss";
+@import "./_book_item.scss";
+
+.body-container {
+	margin-top: 56px;
 }
+.loading-container{
+	.loading-center {
+		width: 200px;
+		max-width: 80vw;
+		padding-left: 80px; // fixed pac-man loader location to center
+		margin: 0 auto;
+	}
+}
+.center-pagination-container {
+	display: flex;
+	justify-content: center;
+}
+.recent-search-container {
+	.title{ font-size: 1.2em; }
+}
+
+.cursor-pointer { cursor: pointer; }

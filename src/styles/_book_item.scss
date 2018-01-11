@@ -1,0 +1,22 @@
+
+.book-item {
+	border-bottom: 1px dashed $gray-400; 
+
+	.book-item-left {
+		.author-and-publisher {
+			span,i{
+				font-size: .9em;
+			}
+		}
+	}
+	.book-item-right {
+		.storage-status {
+			white-space: nowrap;
+		}
+		.link-to-douban {
+			display: block;
+			max-width: 24px;
+			img {width: 100%}
+		}
+	}
+}
