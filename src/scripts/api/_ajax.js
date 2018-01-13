@@ -14,10 +14,12 @@ export function ajax(method, url, data = null,
 	sendDataType = '', allowedStatusCode = [200] ) { 
 	
 	return new Promise((resolve, reject) => {
+		// 是否使用了 XDomainRequest 而不是 XMLHttpRequest
 		let isXDomainRequest = false;
 		let xhr = new XMLHttpRequest();
 
-		//For IE8/IE9 Cross domain request:
+		// For IE8/IE9 Cross domain request:
+		// 为了兼容IE8/IE9 的跨域问题:
 		//@ts-ignore
 		if (typeof XDomainRequest != 'undefined') { 
 			//@ts-ignore			

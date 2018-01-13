@@ -40,15 +40,17 @@ function getBodyComponent() {
 	return <BodyHome />
 }
 
-export function RootComponent({ 
-	attr = null
-}) { 
+export function RootComponent(props) { 
 	let body = getBodyComponent();
+	// 是否是第一次渲染
 	isFirstRender = false;
 
 	return [
+		// 标题栏
 		<Navbar key="navbar" />,
+		// 主内容
 		<div key="body" className="body-container">{body}</div>,
+		// 页尾信息
 		<PageFooter key="foot" />
 	];
 }

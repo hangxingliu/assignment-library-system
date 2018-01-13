@@ -26,9 +26,13 @@ function normalizeAPI(uri = '') {
 }
 
 export function setup(defaultAPI = MOCK) { 
+	// 从 URL 中解析 API源(API服务器)
 	API = parseAPIFromHref();
-	if (!API)
+	if (!API) {
+		// 如果没有通过 URL 设置特定的API源, 则选用默认的API源
+		// 在开发模式下: 默认的源是 模拟数据.
 		API = (process.env.NODE_ENV == "development") ? MOCK : defaultAPI;
+	}
 	if (API != MOCK)
 		API = normalizeAPI(API);
 	console.log("API:", API || "current server");

@@ -8,7 +8,8 @@
     "build-dev": "node ./build/build.js dev",
     "build-dev-live": "node ./build/build.js dev -w",
     "build-prod": "node ./build/build.js prod",
-    "build-prod-live": "node ./build/build.js prod -w"
+    "build-prod-live": "node ./build/build.js prod -w",
+    "git-archive": "git archive --output=\"git-HEAD-$(date '+%y%m%d-%H%M%S').zip\" HEAD"
   },
   "author": "LiuYue",
   "license": "GPL-3.0",

@@ -20,7 +20,7 @@ export class BookResultItem extends React.Component{
 	toggleExpandContent() { this.setState({ expand: !this.state.expand }); }
 
 	componentWillReceiveProps(newProps) { 
-		this.setState({ expand: true });
+		this.setState({ expand: false });
 	}
 
 	render() {
